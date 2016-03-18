@@ -69,6 +69,7 @@ group :development do
   gem 'capistrano-npm'
   gem 'capistrano-foreman'
   gem 'derailed'
+  gem 'stackprof'
 end
 
 group :development, :test do
