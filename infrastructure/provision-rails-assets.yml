@@ -61,6 +61,18 @@
         - wget
         - zsh
 
+    - name: install s3fs-fuse build deps
+      apt: name={{ item }} state=latest update_cache=yes
+      with_items:
+        - automake
+        - autotools-dev
+        - g++
+        - libfuse-dev
+        - libssl-dev
+        - libxml2-dev
+        - make
+        - pkg-config
+
     - name: install bower
       npm: name=bower global=yes
 
