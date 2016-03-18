@@ -16,9 +16,9 @@ test:
 staging:
   <<: *common
   database: rails_assets_staging
-  username: rails_assets_staging
+  username: rails_assets
 
 production:
   <<: *common
   database: rails_assets_production
-  username: rails_assets_production
+  username: rails_assets
