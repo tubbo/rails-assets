@@ -1,0 +1,6 @@
+#!/bin/bash
+ruby -rjson -ne 'obj = JSON.parse($_).values_at("file","line","type"); puts obj.join(":") if obj.first ' |
+    sort      |
+    uniq -c   |
+    sort -n   |
+    tail -20
