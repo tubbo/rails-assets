@@ -59,6 +59,8 @@ gem 'dotenv'
 gem 'actionpack-page_caching'
 gem 'stripe'
 gem 'js-routes'
+gem 'pry', '0.9.12.2'
+gem 'pry-rails'
 
 group :development do
   gem 'better_errors'
@@ -74,8 +76,6 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'pry', '0.9.12.2'
-  gem 'pry-rails'
 end
 
 group :test do
