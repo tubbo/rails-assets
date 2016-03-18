@@ -1,17 +1,20 @@
+require 'objspace'
+
 # DumpUtil provides a dump routine and methods to process
 # the dumps it creates
 module DumpUtil
   module_function
 
-  def dump(path = Dir.pwd)
+  def dump(dir = Dir.pwd)
+    filename = dump_filename(dir)
     Thread.new do
-      require 'objspace'
       ObjectSpace.trace_object_allocations_start
       GC.start
-      File.open(dump_filename(path), 'w') do |f|
+      File.open(filename, 'w') do |f|
         ObjectSpace.dump_all(output: f)
       end
     end.join
+    filename
   end
 
   private
@@ -19,7 +22,7 @@ module DumpUtil
   def dump_filename(path = Dir.pwd)
     File.join(
       path,
-      "#{Socket.gethostname}-#{Process.pid}-#{Time.now.to_i}.json"
+      "#{Socket.gethostname}-#{Process.pid}-#{Time.now.to_i}.heap.json"
     )
   end
 end
