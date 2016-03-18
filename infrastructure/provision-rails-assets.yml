@@ -73,6 +73,10 @@
         - make
         - pkg-config
 
+    - name: install local s3fs binary
+      copy: src=s3fs dest=/usr/local/bin/s3fs
+            mode=0755 owner=root group=root
+
     - name: install bower
       npm: name=bower global=yes
 
