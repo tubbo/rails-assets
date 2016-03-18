@@ -13,6 +13,11 @@ class MainController < ApplicationController
     @failed_jobs = FailedJob.all.to_a
   end
 
+  def heap_dump
+    raise ActionController::RoutingError if Rails.env.production?
+    send_file DumpUtil.dump('/tmp')
+  end
+
   def dependencies
     if params[:gems].blank?
       gems = []
