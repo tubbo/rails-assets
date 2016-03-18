@@ -1,0 +1,22 @@
+common: &common
+  adapter: postgresql
+  encoding: unicode
+  pool: 30
+  password:
+
+
+development:
+  <<: *common
+  database: rails_assets_development
+
+test:
+  <<: *common
+  database: rails_assets_test
+
+staging:
+  <<: *common
+  database: rails_assets_staging
+
+production:
+  <<: *common
+  database: rails_assets_production
