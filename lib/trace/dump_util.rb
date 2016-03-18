@@ -17,8 +17,6 @@ module DumpUtil
     filename
   end
 
-  private
-
   def dump_filename(path = Dir.pwd)
     File.join(
       path,
