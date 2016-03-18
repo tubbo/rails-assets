@@ -68,6 +68,7 @@ group :development do
   gem 'capistrano-passenger'
   gem 'capistrano-npm'
   gem 'capistrano-foreman'
+  gem 'derailed'
 end
 
 group :development, :test do
