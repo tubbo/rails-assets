@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.2.3'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.2.0'
 
 gem 'pg'
@@ -52,15 +51,14 @@ gem 'thread', require: 'thread/pool'
 gem 'whenever'
 
 gem 'postrank-uri'
-
 gem 'foreman'
-
 gem 'dotenv'
 gem 'actionpack-page_caching'
 gem 'stripe'
 gem 'js-routes'
 gem 'pry', '0.9.12.2'
 gem 'pry-rails'
+gem 'rbtrace'
 
 group :development do
   gem 'better_errors'
